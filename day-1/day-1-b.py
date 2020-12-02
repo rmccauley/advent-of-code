@@ -1,20 +1,9 @@
 f1 = open('day-1-a.txt', 'r')
 Lines = f1.readlines()
-
-for line1 in Lines:
-  line1int = int(line1)
-
-  for line2 in Lines:
-    line2int = int(line2)
-
-    for line3 in Lines:
-      line3int = int(line3)
-      if line1int + line2int + line3int == 2020:
-        print(line1int*line2int*line3int)
-        break
-    else:
-      continue
-    break
-  else:
-    continue
-  break
+for x in range(0, len(Lines)):
+  for y in range(1, len(Lines)):
+    for z in range(2, len(Lines)):
+      valX, valY, valZ = int(Lines[x]), int(Lines[y]), int(Lines[z])
+      if x != y and x != z and y != z and valX + valY + valZ == 2020:
+        print(int(Lines[x]) * int(Lines[y]) * int(Lines[z]))
+        exit(0)
